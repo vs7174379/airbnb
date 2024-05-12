@@ -84,12 +84,7 @@ app.use((req,res,next)=>{
     res.locals.currUser=req.user;
     next();
 })
-app.all(
-    "*",(async(req,res,next)=>{
-        allListings = await Listing.find({});
-    res.render("index.ejs", { allListings })
-    })
-)
+
 
 
 app.use("/listings",listingRouter)
@@ -113,6 +108,12 @@ app.use("/",userRouter);
    
 
 // })
+app.all(
+    "*",(async(req,res,next)=>{
+        allListings = await Listing.find({});
+    res.render("index.ejs", { allListings })
+    })
+)
 
 app.all("*",(req,res,next)=>{
     next(new ExpressError(404,"page not found"))
