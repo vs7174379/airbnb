@@ -85,7 +85,7 @@ app.use((req,res,next)=>{
     next();
 })
 app.all(
-    "*",wrapAsync(async(req,res,next)=>{
+    "*",(async(req,res,next)=>{
         allListings = await Listing.find({});
     res.render("index.ejs", { allListings })
     })
