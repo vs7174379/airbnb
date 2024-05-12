@@ -41,6 +41,8 @@ app.listen(8080,()=>{
     console.log("server is listening successsfully");
 })
 
+app.use("/listings",listingRouter)
+
 
 const store= MongoStore.create({
     mongoUrl:dburl,
