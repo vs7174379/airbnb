@@ -32,7 +32,7 @@ const User=require("./models/user.js")
 const dburl=process.env.ATLAS_URL;
 app.use(express.urlencoded({extended:true}))
 async function main(){
-    await mongoose.connect(dburl);
+    await mongoose.connect(mongodb+srv://vs7174379:4wapZpagHOynYAD5@cluster0.ltplaev.mongodb.net/);
 }
 main().then(()=>{console.log("connection succesfuly")}).catch((err)=>{
     console.log(err);
