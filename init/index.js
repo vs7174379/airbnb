@@ -3,7 +3,7 @@ const initData=require("./data.js");
 const Listing=require("../models/Listing.js");
 const user=require("../models/user.js");
 async function main(){
-    await mongoose.connect('mongodb://127.0.0.1:27017/wanderlust');
+    await mongoose.connect('mongodb+srv://vs7174379:4wapZpagHOynYAD5@cluster0.ltplaev.mongodb.net/');
 }
 main().then(()=>{console.log("connection succesfuly")}).catch((err)=>{
     console.log(err);
