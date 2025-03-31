@@ -29,10 +29,10 @@ const passport=require("passport");
 const LocalStrategy=require("passport-local")
 const User=require("./models/user.js")
 
-const dburl=process.env.ATLAS_URL;
+const dburl="mongodb+srv://vs7174379:4wapZpagHOynYAD5@cluster0.ltplaev.mongodb.net/";
 app.use(express.urlencoded({extended:true}))
 async function main(){
-    await mongoose.connect(mongodb+srv://vs7174379:4wapZpagHOynYAD5@cluster0.ltplaev.mongodb.net/);
+    await mongoose.connect(dburl);
 }
 main().then(()=>{console.log("connection succesfuly")}).catch((err)=>{
     console.log(err);
